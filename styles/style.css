@@ -1,0 +1,193 @@
+/* Default settings */
+/* import font cdn link */
+/* Montserrat */
+@import url("https://fonts.googleapis.com/css2?family=Montserrat:wght@500;700&display=swap");
+
+/*Fraunces */
+@import url("https://fonts.googleapis.com/css2?family=Fraunces:opsz,wght@9..144,700&display=swap");
+
+/* variable declaration */
+:root {
+  /* colors */
+
+  /* Primary */
+  --Dark_cyan: hsl(158, 36%, 37%);
+  --Cream: hsl(30, 38%, 92%);
+
+  /* Neutral */
+  --Very_dark_blue: hsl(212, 21%, 14%);
+  --Dark_grayish_blue: hsl(228, 12%, 48%);
+  --White: hsl(0, 0%, 100%);
+
+  /* font size */
+  --fs-main: 14px;
+  /* font family */
+  --fs-main-font-1: "Montserrat", sans-serif;
+  --fs-main-font-2: "Fraunces", sans-serif;
+}
+/* default settings */
+/* box sizing */
+*,
+*::before,
+*::after {
+  box-sizing: border-box;
+}
+
+/* reset margin */
+body,
+h1,
+h2,
+h3,
+h4,
+h5,
+h6,
+p {
+  margin: 0;
+}
+
+/* reset weight */
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
+  font-weight: 400;
+}
+
+body {
+  font-family: var(--fs-main-font);
+  background-color: var(--Very_light_grayish_blue);
+  font-size: var(--fs-main);
+
+  min-height: 100vh;
+}
+
+img,
+picture {
+  max-width: 100%;
+  display: block;
+}
+
+input,
+button,
+textarea,
+select {
+  font: inherit;
+}
+/* remove animations for people who've turned them off */
+@media (prefers-reduced-motion: reduce) {
+  *,
+  *::before,
+  *::after {
+    animation-duration: 0.01ms !important;
+    animation-iteration-count: 1 !important;
+    transition-duration: 0.01ms !important;
+    scroll-behavior: auto !important;
+  }
+}
+/* End of default settings */
+
+/* Main Styling */
+body {
+  background-color: var(--Cream);
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  min-height: 100vh;
+}
+.main_container {
+  margin: 20vh auto;
+  background-color: var(--White);
+  border-radius: 10px;
+  width: 500px;
+  height: 350px;
+  display: grid;
+  grid-template-columns: auto auto;
+}
+.main_container_image {
+  width: 250px;
+  height: 350px;
+
+  border-radius: 10px 0px 0px 10px;
+}
+.main_container_text {
+  width: 250px;
+  height: 350px;
+  padding: 15px;
+}
+.main_container_text_header {
+  font-family: var(--fs-main-font-2);
+  margin: 10px 0;
+  color: var(--Very_dark_blue);
+  width: 200px;
+}
+p {
+  font-family: var(--fs-main-font-1);
+  font-size: 14px;
+  margin: 10px 0;
+  color: var(--Dark_grayish_blue);
+}
+.main_container_text_span_1 {
+  color: var(--Dark_cyan);
+  font-size: 20px;
+  font-family: var(--fs-main-font-2);
+  margin: 5px 0px;
+}
+.main_container_text_span_2 {
+  text-decoration: line-through;
+  font-size: 10px;
+  margin: 0px 10px;
+}
+button {
+  width: 220px;
+  margin: 10px auto;
+  color: var(--White);
+  background-color: var(--Dark_cyan);
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  padding: 10px;
+  border: none;
+  border-radius: 5px;
+  font-family: var(--fs-main-font-1);
+}
+button:hover {
+  cursor: grab;
+  transition: 0.5s ease-in-out;
+  filter: brightness(40%);
+}
+.cart_icon {
+  margin: 0px 10px;
+}
+
+/* Media Query */
+/* Mobile */
+@media screen and (max-width: 375px) {
+  .main_container {
+    display: grid;
+    grid-template-columns: auto;
+    width: 350px;
+    height: 90vh;
+    margin: 2vh auto;
+  }
+  .main_container_image {
+    width: 350px;
+    height: 50vh;
+    border-radius: 10px 10px 0px 0px;
+  }
+  .main_container_text {
+    width: 350px;
+    padding: 15px;
+  }
+  .main_container_text_header {
+    margin: 5px 0;
+    width: 300px;
+  }
+  p {
+    margin: 5px 0;
+  }
+  button {
+    width: 320px;
+  }
+}
